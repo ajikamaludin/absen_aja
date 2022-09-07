@@ -29,8 +29,15 @@ jobs:
       # Test ENV
       - shell: bash
         env:
+          API_KEY: ${{ secrets.API_KEY }}
+          API_TOKEN: ${{ secrets.API_TOKEN }}
           ENDPOINT_LOGIN: ${{ secrets.ENDPOINT_LOGIN }}
+          ENDPOINT_MASUK: ${{ secrets.ENDPOINT_MASUK }}
+          ENDPOINT_PULANG: ${{ secrets.ENDPOINT_PULANG }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          USERNAME: ${{ secrets.USERNAME }}
           ENDPOINT_TEST: ${{ secrets.TEST }}
         run: |
-          echo $ENDPOINT_LOGIN
-          curl $ENDPOINT_TEST
+          echo $ENDPOINT_TEST
+          sh login.sh
+          sh masuk.sh
