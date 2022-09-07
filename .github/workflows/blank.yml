@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Test_Aja
 
 # Controls when the workflow will run
 on:
@@ -25,6 +25,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      # Test ENV
+      - shell: bash
+        env:
+          ENDPOINT_LOGIN: ${{ secrets.ENDPOINT_LOGIN }}
+        run: echo $ENDPOINT_LOGIN
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
@@ -34,3 +40,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      
