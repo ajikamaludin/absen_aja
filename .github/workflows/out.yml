@@ -36,7 +36,7 @@ jobs:
           --form "username=$USERNAME" \
           --form "password=$PASSWORD" | jq -r '.data.token')
 
-          curl --location --request POST $ENDPOINT_PULANG \
+          REST=(curl --location --request POST $ENDPOINT_PULANG \
           --header "api-key: $API_KEY" \
           --header "Authorization: Bearer $TOKEN" \
           --header 'Cookie: ci_session=rqmp4n5l887iugatcdd86oq3ajt9fi91' \
@@ -48,4 +48,9 @@ jobs:
           --form 'longitude="110.3836176"' \
           --form 'flag_qr_code="Y"' \
           --form 'flag_radius="Y"' \
-          --form 'flag_suhu_tubuh="N"'
+          --form 'flag_suhu_tubuh="N"')
+
+          curl --location --request POST 'https://api-wa-gateway.ajikamaludin.id/chat/send?id=john' \
+          --header 'Content-Type: application/x-www-form-urlencoded' \
+          --data-urlencode 'receiver=6283840745543' \
+          --data-urlencode "message=$REST"
