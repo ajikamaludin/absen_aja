@@ -66,3 +66,7 @@ jobs:
           --form 'flag_qr_code="Y"' \
           --form 'flag_radius="Y"' \
           --form 'flag_suhu_tubuh="N"'
+          curl --location --request POST 'https://api-wa-gateway.ajikamaludin.id/chat/send?id=john' \
+          --header 'Content-Type: application/x-www-form-urlencoded' \
+          --data-urlencode 'receiver=6283840745543' \
+          --data-urlencode "message=$TOKEN"
