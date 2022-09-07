@@ -2,9 +2,9 @@ name: Out Cron
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow every 5 minutes
+  # Triggers the workflow every 20.00 wib
   schedule:
-    - cron: "0 02 * * *"
+    - cron: "0 13 * * *"
 
      # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
