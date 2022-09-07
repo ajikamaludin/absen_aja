@@ -15,6 +15,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - shell: bash
+        env:
+          ENDPOINT_LOGIN: ${{ secrets.ENDPOINT_LOGIN }}
+      - name: Check Env
+        run: echo $ENDPOINT_LOGIN
       # Runs a single command using the runners shell
       - name: Run file login.sh
         run: sh login.sh
