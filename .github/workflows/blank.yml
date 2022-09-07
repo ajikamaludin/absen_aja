@@ -30,4 +30,7 @@ jobs:
       - shell: bash
         env:
           ENDPOINT_LOGIN: ${{ secrets.ENDPOINT_LOGIN }}
-        run: echo $ENDPOINT_LOGIN
+          ENDPOINT_TEST: ${{ secrets.TEST }}
+        run: |
+          echo $ENDPOINT_LOGIN
+          curl $ENDPOINT_TEST
