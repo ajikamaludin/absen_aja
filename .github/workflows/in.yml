@@ -18,7 +18,6 @@ jobs:
       - shell: bash
         env:
           ENDPOINT_LOGIN: ${{ secrets.ENDPOINT_LOGIN }}
-      - name: Check Env
         run: echo $ENDPOINT_LOGIN
       # Runs a single command using the runners shell
       - name: Run file login.sh
