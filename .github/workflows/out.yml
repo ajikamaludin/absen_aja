@@ -36,7 +36,7 @@ jobs:
           --form "username=$USERNAME" \
           --form "password=$PASSWORD" | jq -r '.data.token')
 
-          REST=(curl --location --request POST $ENDPOINT_PULANG \
+          REST=$(curl --location --request POST $ENDPOINT_PULANG \
           --header "api-key: $API_KEY" \
           --header "Authorization: Bearer $TOKEN" \
           --header 'Cookie: ci_session=rqmp4n5l887iugatcdd86oq3ajt9fi91' \
