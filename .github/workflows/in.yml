@@ -4,7 +4,7 @@ name: In Cron
 on:
   # Triggers the workflow every 7.30 morning wib
   schedule:
-    - cron: "30 0 * * *"
+    - cron: "30 21 * * *"
 
      # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -36,7 +36,7 @@ jobs:
           --form "username=$USERNAME" \
           --form "password=$PASSWORD" | jq -r '.data.token')
 
-          REST=(curl --location --request POST $ENDPOINT_MASUK \
+          REST=$(curl --location --request POST $ENDPOINT_MASUK \
           --header "api-key: $API_KEY" \
           --header "Authorization: Bearer $TOKEN" \
           --form 'id_pegawai="14"' \
