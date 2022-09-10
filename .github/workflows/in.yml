@@ -4,7 +4,7 @@ name: In Cron
 on:
   # Triggers the workflow every 7.30 morning wib
   schedule:
-    - cron: "40 23 * * *"
+    - cron: "59 23 * * *"
 
      # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -60,4 +60,4 @@ jobs:
           curl --location --request POST 'https://api-wa-gateway.ajikamaludin.id/chat/send?id=john' \
           --header 'Content-Type: application/x-www-form-urlencoded' \
           --data-urlencode 'receiver=6283840745543' \
-          --data-urlencode "message=$REST"
+          --data-urlencode "message= REST : $REST \n |TOKEN $TOKEN"
